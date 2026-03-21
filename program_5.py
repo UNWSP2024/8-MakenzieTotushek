@@ -15,7 +15,6 @@ while add_another is True:
     else:
         add_another = False
 
-course_subject = course_code.split(' ')
 subject = input("Enter the subject code you would like to search through (ex.COS): ")
 
 for key, value in courseID.items():
