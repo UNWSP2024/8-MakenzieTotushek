@@ -1,3 +1,7 @@
+# Name: Makenzie Totushek
+# Date: 3/20/26
+# Title: Initial Seperator
+
 # Program #2: Word Separator
 # Write a program that accepts as input a sentence in which all of the words are run together, 
 # but the first character of each word is uppercase.  
@@ -11,13 +15,20 @@ def word_separator(sentence):
 
     new_sentence = ""
     #    Add your logic here
-
+    words = []
+    start = 0
+    for w in range (1, len(sentence)):
+        if sentence[w].isupper():
+            words.append(sentence[start:w])
+            start = w
+    words.append(sentence[start:])
+    new_sentence = " ".join(words)
     return new_sentence.strip()
 
 # Example usage
 if __name__=="__main__":
-    sentence = "StopAndSmellTheRoses"
-
+    # sentence = "StopAndSmellTheRoses"
+    sentence = input("Enter a sentence with all words together but the first letter of each word capitalized: ")
     new_sentence = word_separator(sentence)
 
     print(new_sentence)

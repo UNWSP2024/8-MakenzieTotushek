@@ -7,14 +7,17 @@
 
 def initials_generator(personsName):
 
-    personsInitials = ""
+    personsInitials = personsName.strip().split()
     #    Add your logic here
+    result = ''
+    for s in personsInitials:
+        result += (s[0].upper() + '.')
 
-    return personsInitials.strip()
+    return (result)
 
 # Example usage
 if __name__=="__main__":
-    personsName = input('Enter the users first, middle, and last name')
+    personsName = input('Enter the users first, middle, and last name: ')
 
     initials = initials_generator(personsName)
 
